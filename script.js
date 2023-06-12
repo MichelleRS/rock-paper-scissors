@@ -7,22 +7,21 @@ const resultsMessage = document.getElementById("resultsMessage");
 
 /* state */
 let roundNum = 0;
-console.log("roundNum", roundNum);
+let ties = 0;
+let playerWins = 0;
+let computerWins = 0;
 
 /* events */
 window.addEventListener("load", () => {
   // listen for player selection and send to handleRound()
   rockBtn.addEventListener("click", () => {
     handleRound("rock");
-    console.log("roundNum", roundNum);
   });
   paperBtn.addEventListener("click", () => {
     handleRound("paper");
-    console.log("roundNum", roundNum);
   });
   scissorsBtn.addEventListener("click", () => {
     handleRound("scissors");
-    console.log("roundNum", roundNum);
   });
 });
 
@@ -56,11 +55,10 @@ function handleRound(playerSelection) {
   // get computer selection
   let computerSelection = getComputerSelection();
 
+  /* handle selection: update state and results message */
   // handle tie
   if (playerSelection === computerSelection) {
-    console.log("playerSelection", playerSelection);
-    console.log("computerSelection", computerSelection);
-    console.log("Tie!");
+    ties++;
     resultsMessage.textContent = "Tie";
   }
   // handle player win
@@ -69,16 +67,26 @@ function handleRound(playerSelection) {
     (playerSelection === "paper" && computerSelection === "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
-    console.log("playerSelection", playerSelection);
-    console.log("computerSelection", computerSelection);
-    console.log("Player wins!");
+    playerWins++;
     resultsMessage.textContent = "Player wins";
   }
   // handle computer win
   else {
-    console.log("playerSelection", playerSelection);
-    console.log("computerSelection", computerSelection);
-    console.log("Computer wins!");
+    computerWins++;
     resultsMessage.textContent = "Computer wins";
   }
+
+  displayScoreTally();
+}
+
+function displayScoreTally() {
+  // get DOM elements
+  let tiesEl = document.getElementById("ties");
+  let playerWinsEl = document.getElementById("playerWins");
+  let computerWinsEl = document.getElementById("computerWins");
+
+  // set text content to current state
+  tiesEl.textContent = ties;
+  playerWinsEl.textContent = playerWins;
+  computerWinsEl.textContent = computerWins;
 }
