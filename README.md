@@ -4,20 +4,28 @@ A player versus computer game of rock-paper-scissors.
 
 ## Project Status
 
-_In progress_
+- JavaScript MVP complete.
+- CSS planning in progress.
 
-## Components
+## Project Planning
+
+### Components
 
 - buttons for player selections: rock, paper, scissors
-- score tally for player and computer wins
-- results message: round result, game winner
+- round results message
+- scoreboard:
+  - player wins
+  - computer wins
+  - ties
+  - rounds
+  - reset button
 
-## Tasks
+### JavaScript Tasks
 
-- [] build index.html
-- [] get random computer selection
-- [] on click, compare player selection with computer result
-- [] display score tally and round results message
-- [] display game winner results message after 5 rounds
-  - [] disable player selections
-  - [] render "play again" button that reloads game
+- [x] build index.html
+- [x] get random computer selection
+- [x] on player selection click:
+  - [x] send player selection to handleRound()
+  - [x] increment and display round number
+  - [x] update score tally state and results message based on round result (tie, player win, computer win)
+- [x] add 'Reset Score' button
