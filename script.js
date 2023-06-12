@@ -2,6 +2,8 @@
 const rockBtn = document.querySelector("[name='rock']");
 const paperBtn = document.querySelector("[name='paper']");
 const scissorsBtn = document.querySelector("[name='scissors']");
+const roundNumSpan = document.getElementById("roundNumSpan");
+const resultsMessage = document.getElementById("resultsMessage");
 
 /* state */
 let roundNum = 0;
@@ -49,16 +51,17 @@ function getComputerSelection() {
 function handleRound(playerSelection) {
   // increment round number
   roundNum++;
+  // display round number in results section
+  roundNumSpan.textContent = roundNum;
   // get computer selection
   let computerSelection = getComputerSelection();
-  // declare a variable for round result
-  let roundResult = "";
 
   // handle tie
   if (playerSelection === computerSelection) {
     console.log("playerSelection", playerSelection);
     console.log("computerSelection", computerSelection);
     console.log("Tie!");
+    resultsMessage.textContent = "Tie";
   }
   // handle player win
   else if (
@@ -69,11 +72,13 @@ function handleRound(playerSelection) {
     console.log("playerSelection", playerSelection);
     console.log("computerSelection", computerSelection);
     console.log("Player wins!");
+    resultsMessage.textContent = "Player wins";
   }
   // handle computer win
   else {
     console.log("playerSelection", playerSelection);
     console.log("computerSelection", computerSelection);
     console.log("Computer wins!");
+    resultsMessage.textContent = "Computer wins";
   }
 }
