@@ -4,6 +4,7 @@ const paperBtn = document.querySelector("[name='paper']");
 const scissorsBtn = document.querySelector("[name='scissors']");
 const roundNumSpan = document.getElementById("roundNumSpan");
 const resultsMessage = document.getElementById("resultsMessage");
+const resetScoresBtn = document.getElementById("resetScores");
 
 /* state */
 let roundNum = 0;
@@ -23,6 +24,11 @@ window.addEventListener("load", () => {
   scissorsBtn.addEventListener("click", () => {
     handleRound("scissors");
   });
+});
+
+// reset game
+resetScoresBtn.addEventListener("click", () => {
+  location.reload();
 });
 
 /* functions */
