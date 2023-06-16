@@ -1,29 +1,23 @@
+import { renderPlayerSelectionsDiv } from "./render-utils.js";
+
 /* get DOM elements */
-const rockBtn = document.querySelector("[name='rock']");
-const paperBtn = document.querySelector("[name='paper']");
-const scissorsBtn = document.querySelector("[name='scissors']");
+const gameControls = document.getElementById("gameControls");
 const roundNumSpan = document.getElementById("roundNumSpan");
 const resultsMessage = document.getElementById("resultsMessage");
 const resetScoresBtn = document.getElementById("resetScores");
 
 /* state */
-let roundNum = 0;
-let ties = 0;
 let playerWins = 0;
 let computerWins = 0;
+let ties = 0;
+let roundNum = 0;
 
 /* events */
 window.addEventListener("load", () => {
-  // listen for player selection and send to handleRound()
-  rockBtn.addEventListener("click", () => {
-    handleRound("rock");
-  });
-  paperBtn.addEventListener("click", () => {
-    handleRound("paper");
-  });
-  scissorsBtn.addEventListener("click", () => {
-    handleRound("scissors");
-  });
+  // display player selections
+  displayPlayerSelections();
+  // handle player selection click
+  handlePlayerSelection();
 });
 
 // reset game
@@ -32,6 +26,31 @@ resetScoresBtn.addEventListener("click", () => {
 });
 
 /* functions */
+function displayPlayerSelections() {
+  // get #playerSelections div element
+  let playerSelections = renderPlayerSelectionsDiv();
+  // append #playerSelections div element to #gameControls section
+  gameControls.append(playerSelections);
+}
+
+function handlePlayerSelection() {
+  // handle rock
+  const rockBtn = document.querySelector("[name='rock']");
+  rockBtn.addEventListener("click", () => {
+    handleRound("rock");
+  });
+  // handle paper
+  const paperBtn = document.querySelector("[name='paper']");
+  paperBtn.addEventListener("click", () => {
+    handleRound("paper");
+  });
+  // handle scissors
+  const scissorsBtn = document.querySelector("[name='scissors']");
+  scissorsBtn.addEventListener("click", () => {
+    handleRound("scissors");
+  });
+}
+
 function getComputerSelection() {
   // initialize a variable to store random number between 0-2
   let randomNumber = Math.floor(Math.random() * 3);
@@ -52,7 +71,6 @@ function getComputerSelection() {
   return computerSelection;
 }
 
-// handle round
 function handleRound(playerSelection) {
   // increment round number
   roundNum++;
