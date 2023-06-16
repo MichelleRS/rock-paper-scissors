@@ -11,21 +11,27 @@ export function renderPlayerSelectionsDiv() {
   // append text node to h2 element
   h2.appendChild(h2Text);
 
-  // create buttons for rock, paper, and scissors
-  // TODO refactor with type
-  // rock
+  // create rock button element
   let rockButton = document.createElement("button");
-  rockButton.setAttribute("name", "rock");
+  // set attributes
+  setAttributes(rockButton, { type: "button", name: "rock" });
+  // create text node and append to button
   let rockText = document.createTextNode("Rock");
   rockButton.appendChild(rockText);
-  // paper
+
+  // create paper button element
   let paperButton = document.createElement("button");
-  paperButton.setAttribute("name", "paper");
+  // set attributes
+  setAttributes(paperButton, { type: "button", name: "paper" });
+  // create text node and append to button
   let paperText = document.createTextNode("Paper");
   paperButton.appendChild(paperText);
-  // scissors
+
+  // create scissors button element
   let scissorsButton = document.createElement("button");
-  scissorsButton.setAttribute("name", "scissors");
+  //  set attributes
+  setAttributes(scissorsButton, { type: "button", name: "scissors" });
+  // create text node and append to button
   let scissorsText = document.createTextNode("Scissors");
   scissorsButton.appendChild(scissorsText);
 
@@ -36,5 +42,9 @@ export function renderPlayerSelectionsDiv() {
   return divEl;
 }
 
-/* helper functions */
-// TODO helper function for setting multiple attributes
+// helper function for setting multiple attributes
+function setAttributes(el, attrs) {
+  for (let key in attrs) {
+    el.setAttribute(key, attrs[key]);
+  }
+}
