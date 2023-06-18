@@ -42,6 +42,29 @@ export function renderPlayerSelectionsDiv() {
   return divEl;
 }
 
+export function renderRoundResultsDiv() {
+  // create div element
+  const divEl = document.createElement("div");
+  // set id
+  divEl.setAttribute("id", "roundResults");
+
+  // create h2 element for round results message
+  const h2El = document.createElement("h2");
+  // create text node for h2 element
+  let h2Text = document.createTextNode("TODO results message");
+  h2El.appendChild(h2Text);
+
+  // TODO player selection
+  // TODO computer selection
+  // TODO 'Next Round' button
+
+  // append all to div element
+  divEl.append(h2El);
+
+  // return div element
+  return divEl;
+}
+
 // helper function for setting multiple attributes
 function setAttributes(el, attrs) {
   for (let key in attrs) {

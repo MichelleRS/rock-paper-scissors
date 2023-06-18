@@ -1,4 +1,7 @@
-import { renderPlayerSelectionsDiv } from "./render-utils.js";
+import {
+  renderPlayerSelectionsDiv,
+  renderRoundResultsDiv,
+} from "./render-utils.js";
 
 /* get DOM elements */
 const gameControls = document.getElementById("gameControls");
@@ -14,10 +17,13 @@ let roundNum = 0;
 
 /* events */
 window.addEventListener("load", () => {
+  // TODO handle game controls
   // display player selections
   displayPlayerSelections();
   // handle player selection click
   handlePlayerSelection();
+  // display round results
+  displayRoundResults();
 });
 
 // reset game
@@ -83,7 +89,8 @@ function handleRound(playerSelection) {
   // handle tie
   if (playerSelection === computerSelection) {
     ties++;
-    resultsMessage.textContent = "Tie";
+    // resultsMessage.textContent = "Tie";
+    console.log("This round is a tie.");
   }
   // handle player win
   else if (
@@ -92,15 +99,19 @@ function handleRound(playerSelection) {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     playerWins++;
-    resultsMessage.textContent = "Player wins";
+    // resultsMessage.textContent = "Player wins";
+    console.log("Player wins this round.");
   }
   // handle computer win
   else {
     computerWins++;
-    resultsMessage.textContent = "Computer wins";
+    // resultsMessage.textContent = "Computer wins";
+    console.log("Computer wins this round.");
   }
 
   displayScoreTally();
+  displayRoundResults(resultsMessage);
+  console.log("resultsMessage", resultsMessage);
 }
 
 function displayScoreTally() {
@@ -113,4 +124,9 @@ function displayScoreTally() {
   tiesEl.textContent = ties;
   playerWinsEl.textContent = playerWins;
   computerWinsEl.textContent = computerWins;
+}
+
+function displayRoundResults() {
+  let roundResults = renderRoundResultsDiv();
+  gameControls.append(roundResults);
 }
