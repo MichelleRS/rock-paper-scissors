@@ -6,7 +6,6 @@ import {
 /* get DOM elements */
 const gameControls = document.getElementById("gameControls");
 const roundNumSpan = document.getElementById("roundNumSpan");
-const resultsMessage = document.getElementById("resultsMessage");
 const resetScoresBtn = document.getElementById("resetScores");
 const playerSelectionsDiv = renderPlayerSelectionsDiv();
 const roundResultsDiv = renderRoundResultsDiv();
@@ -131,10 +130,10 @@ function handleRound(playerSelection) {
     toggleGameControls();
   }
 
-  displayScoreTally();
+  displayScoreboard();
 }
 
-function displayScoreTally() {
+function displayScoreboard() {
   // get DOM elements
   let tiesEl = document.getElementById("ties");
   let playerWinsEl = document.getElementById("playerWins");
