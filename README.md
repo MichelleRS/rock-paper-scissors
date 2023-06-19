@@ -4,13 +4,12 @@ A player versus computer game of rock-paper-scissors.
 
 ## Project Status
 
-- Currently refactoring
-
 - Complete:
   - JavaScript MVP
   - Layout design
+  - Toggle refactor
 - Up next:
-  - Style planning
+  - CSS
 
 ## Project Planning
 
@@ -19,10 +18,12 @@ A player versus computer game of rock-paper-scissors.
 - main
   - section#gameControls
     - div#playerSelections
-      - buttons for player selections: rock, paper, scissors
+      - buttons for player selection: rock, paper, scissors
     - div#roundResults
-      - round results message
-      - button to start next round
+      - round winner
+      - player selection
+      - computer selection
+      - 'Next Round' button
   - section#scoreboard
     - prominent display of scores: player, computer
     - round number
@@ -42,11 +43,14 @@ A player versus computer game of rock-paper-scissors.
 
 - [x] render player selections on page load
   - [x] render-utils: refactor with helper function to set multiple attributes
-- [] build renderRoundResults function
-- [] in #gameControls section:
-  - [] when player makes a selection, toggle to #roundResults div
-  - [] when player clicks "Next Round", toggle to #playerSelections div
+- [x] build renderRoundResultsDiv function
+- [x] in #gameControls section:
+  - [x] when player makes a selection, toggle to #roundResults div
+  - [x] when player clicks "Next Round", toggle to #playerSelections div
+- [x] change #scoreTally div to #scoreboard
 
 ## Resources
 
-[Setting multiple attributes for an element at once with JavaScript.](https://stackoverflow.com/questions/12274748/setting-multiple-attributes-for-an-element-at-once-with-javascript) Stack Overflow.
+- [Setting multiple attributes for an element at once with JavaScript.](https://stackoverflow.com/questions/12274748/setting-multiple-attributes-for-an-element-at-once-with-javascript) Stack Overflow.
+
+- Toggle first tested in my repo [javascript-practice > modular-components](https://github.com/MichelleRS/javascript-practice/tree/main/modular-components)
