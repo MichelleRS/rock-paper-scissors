@@ -56,10 +56,18 @@ export function renderRoundResultsDiv() {
 
   // TODO player selection
   // TODO computer selection
-  // TODO 'Next Round' button
+
+  // create 'Next Round' button
+  let buttonEl = document.createElement("button");
+  // set id attribute
+  buttonEl.setAttribute("id", "nextRoundBtn");
+  // create text node for button
+  let buttonText = document.createTextNode("Next Round");
+  // append text node to buttonEl
+  buttonEl.appendChild(buttonText);
 
   // append all to div element
-  divEl.append(h2El);
+  divEl.append(h2El, buttonEl);
 
   // return div element
   return divEl;
