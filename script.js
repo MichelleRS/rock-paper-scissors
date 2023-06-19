@@ -1,29 +1,25 @@
+import {
+  renderPlayerSelectionsDiv,
+  renderRoundResultsDiv,
+} from "./render-utils.js";
+
 /* get DOM elements */
-const rockBtn = document.querySelector("[name='rock']");
-const paperBtn = document.querySelector("[name='paper']");
-const scissorsBtn = document.querySelector("[name='scissors']");
+const gameControls = document.getElementById("gameControls");
 const roundNumSpan = document.getElementById("roundNumSpan");
-const resultsMessage = document.getElementById("resultsMessage");
 const resetScoresBtn = document.getElementById("resetScores");
+const playerSelectionsDiv = renderPlayerSelectionsDiv();
+const roundResultsDiv = renderRoundResultsDiv();
 
 /* state */
-let roundNum = 0;
-let ties = 0;
 let playerWins = 0;
 let computerWins = 0;
+let ties = 0;
+let roundNum = 0;
 
 /* events */
 window.addEventListener("load", () => {
-  // listen for player selection and send to handleRound()
-  rockBtn.addEventListener("click", () => {
-    handleRound("rock");
-  });
-  paperBtn.addEventListener("click", () => {
-    handleRound("paper");
-  });
-  scissorsBtn.addEventListener("click", () => {
-    handleRound("scissors");
-  });
+  // handle game controls
+  handleGameControls();
 });
 
 // reset game
@@ -32,6 +28,46 @@ resetScoresBtn.addEventListener("click", () => {
 });
 
 /* functions */
+function handleGameControls() {
+  // display player selections and round results in #gameControls
+  gameControls.append(playerSelectionsDiv, roundResultsDiv);
+  // hide round results
+  roundResultsDiv.classList.add("hidden");
+
+  // handle player selection clicks
+  handlePlayerSelection();
+  // handle 'Next Round' button click
+  handleNextRound();
+}
+
+function handlePlayerSelection() {
+  // handle rock
+  const rockBtn = document.querySelector("[name='rock']");
+  rockBtn.addEventListener("click", () => {
+    handleRound("rock");
+  });
+  // handle paper
+  const paperBtn = document.querySelector("[name='paper']");
+  paperBtn.addEventListener("click", () => {
+    handleRound("paper");
+  });
+  // handle scissors
+  const scissorsBtn = document.querySelector("[name='scissors']");
+  scissorsBtn.addEventListener("click", () => {
+    handleRound("scissors");
+  });
+}
+
+function handleNextRound() {
+  // get button
+  const nextRoundBtn = document.getElementById("nextRoundBtn");
+  // listen for click
+  nextRoundBtn.addEventListener("click", async () => {
+    // hide round results and display player selections
+    toggleGameControls();
+  });
+}
+
 function getComputerSelection() {
   // initialize a variable to store random number between 0-2
   let randomNumber = Math.floor(Math.random() * 3);
@@ -52,7 +88,6 @@ function getComputerSelection() {
   return computerSelection;
 }
 
-// handle round
 function handleRound(playerSelection) {
   // increment round number
   roundNum++;
@@ -61,11 +96,18 @@ function handleRound(playerSelection) {
   // get computer selection
   let computerSelection = getComputerSelection();
 
-  /* handle selection: update state and results message */
+  /* handle selections: 
+    - update state
+    - set text content for round winner, player and computer selection
+    - hide player selections div and display round results div
+  */
   // handle tie
   if (playerSelection === computerSelection) {
     ties++;
-    resultsMessage.textContent = "Tie";
+    roundWinnerEl.textContent = "This round is a tie.";
+    playerSelectionEl.textContent = `Player chose ${playerSelection}`;
+    computerSelectionEl.textContent = `Computer chose ${computerSelection}`;
+    toggleGameControls();
   }
   // handle player win
   else if (
@@ -74,18 +116,24 @@ function handleRound(playerSelection) {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     playerWins++;
-    resultsMessage.textContent = "Player wins";
+    roundWinnerEl.textContent = "Player wins this round.";
+    playerSelectionEl.textContent = `Player chose ${playerSelection}`;
+    computerSelectionEl.textContent = `Computer chose ${computerSelection}`;
+    toggleGameControls();
   }
   // handle computer win
   else {
     computerWins++;
-    resultsMessage.textContent = "Computer wins";
+    roundWinnerEl.textContent = "Computer wins this round.";
+    playerSelectionEl.textContent = `Player chose ${playerSelection}`;
+    computerSelectionEl.textContent = `Computer chose ${computerSelection}`;
+    toggleGameControls();
   }
 
-  displayScoreTally();
+  displayScoreboard();
 }
 
-function displayScoreTally() {
+function displayScoreboard() {
   // get DOM elements
   let tiesEl = document.getElementById("ties");
   let playerWinsEl = document.getElementById("playerWins");
@@ -95,4 +143,10 @@ function displayScoreTally() {
   tiesEl.textContent = ties;
   playerWinsEl.textContent = playerWins;
   computerWinsEl.textContent = computerWins;
+}
+
+// use to toggle between player selections and round results
+function toggleGameControls() {
+  playerSelectionsDiv.classList.toggle("hidden");
+  roundResultsDiv.classList.toggle("hidden");
 }
