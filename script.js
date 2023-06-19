@@ -97,13 +97,17 @@ function handleRound(playerSelection) {
   // get computer selection
   let computerSelection = getComputerSelection();
 
-  /* handle selection: update state and results message */
+  /* handle selections: 
+    - update state
+    - set text content for round winner, player and computer selection
+    - hide player selections div and display round results div
+  */
   // handle tie
   if (playerSelection === computerSelection) {
     ties++;
-    // resultsMessage.textContent = "Tie";
-    console.log("This round is a tie.");
-    // hide player selections and display round results
+    roundWinnerEl.textContent = "This round is a tie.";
+    playerSelectionEl.textContent = `Player chose ${playerSelection}`;
+    computerSelectionEl.textContent = `Computer chose ${computerSelection}`;
     toggleGameControls();
   }
   // handle player win
@@ -113,17 +117,17 @@ function handleRound(playerSelection) {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     playerWins++;
-    // resultsMessage.textContent = "Player wins";
-    console.log("Player wins this round.");
-    // hide player selections and display round results
+    roundWinnerEl.textContent = "Player wins this round.";
+    playerSelectionEl.textContent = `Player chose ${playerSelection}`;
+    computerSelectionEl.textContent = `Computer chose ${computerSelection}`;
     toggleGameControls();
   }
   // handle computer win
   else {
     computerWins++;
-    // resultsMessage.textContent = "Computer wins";
-    console.log("Computer wins this round.");
-    // hide player selections and display round results
+    roundWinnerEl.textContent = "Computer wins this round.";
+    playerSelectionEl.textContent = `Player chose ${playerSelection}`;
+    computerSelectionEl.textContent = `Computer chose ${computerSelection}`;
     toggleGameControls();
   }
 

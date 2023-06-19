@@ -7,35 +7,35 @@ export function renderPlayerSelectionsDiv() {
   // create h2 element
   const h2 = document.createElement("h2");
   // create text node for h2 element
-  let h2Text = document.createTextNode("Make your selection");
+  const h2Text = document.createTextNode("Make your selection");
   // append text node to h2 element
   h2.appendChild(h2Text);
 
   // create rock button element
-  let rockButton = document.createElement("button");
+  const rockButton = document.createElement("button");
   // set attributes
   setAttributes(rockButton, { type: "button", name: "rock" });
   // create text node and append to button
-  let rockText = document.createTextNode("Rock");
+  const rockText = document.createTextNode("Rock");
   rockButton.appendChild(rockText);
 
   // create paper button element
-  let paperButton = document.createElement("button");
+  const paperButton = document.createElement("button");
   // set attributes
   setAttributes(paperButton, { type: "button", name: "paper" });
   // create text node and append to button
-  let paperText = document.createTextNode("Paper");
+  const paperText = document.createTextNode("Paper");
   paperButton.appendChild(paperText);
 
   // create scissors button element
-  let scissorsButton = document.createElement("button");
+  const scissorsButton = document.createElement("button");
   //  set attributes
   setAttributes(scissorsButton, { type: "button", name: "scissors" });
   // create text node and append to button
-  let scissorsText = document.createTextNode("Scissors");
+  const scissorsText = document.createTextNode("Scissors");
   scissorsButton.appendChild(scissorsText);
 
-  // append h2 and buttons to div
+  // append all elements to div
   divEl.append(h2, rockButton, paperButton, scissorsButton);
 
   // return div element
@@ -50,24 +50,30 @@ export function renderRoundResultsDiv() {
 
   // create h2 element for round results message
   const h2El = document.createElement("h2");
-  // create text node for h2 element
-  let h2Text = document.createTextNode("TODO results message");
-  h2El.appendChild(h2Text);
+  // set id
+  h2El.setAttribute("id", "roundWinnerEl");
 
-  // TODO player selection
-  // TODO computer selection
+  // create player selection paragraph element
+  const playerSelectionEl = document.createElement("p");
+  // set id
+  playerSelectionEl.setAttribute("id", "playerSelectionEl");
 
-  // create 'Next Round' button
-  let buttonEl = document.createElement("button");
+  // create computer selection paragraph element
+  const computerSelectionEl = document.createElement("p");
+  // set id
+  computerSelectionEl.setAttribute("id", "computerSelectionEl");
+
+  // create 'Next Round' button element
+  const buttonEl = document.createElement("button");
   // set id attribute
   buttonEl.setAttribute("id", "nextRoundBtn");
   // create text node for button
-  let buttonText = document.createTextNode("Next Round");
+  const buttonText = document.createTextNode("Next Round");
   // append text node to buttonEl
   buttonEl.appendChild(buttonText);
 
-  // append all to div element
-  divEl.append(h2El, buttonEl);
+  // append all elements to div element
+  divEl.append(h2El, playerSelectionEl, computerSelectionEl, buttonEl);
 
   // return div element
   return divEl;
