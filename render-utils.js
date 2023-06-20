@@ -19,7 +19,11 @@ export function renderPlayerSelectionsDiv() {
   // create rock button element
   const rockButton = document.createElement("button");
   // set attributes
-  setAttributes(rockButton, { type: "button", name: "rock" });
+  setAttributes(rockButton, {
+    type: "button",
+    name: "rock",
+    class: "playerButton",
+  });
   // create text node and append to button
   const rockText = document.createTextNode("Rock");
   rockButton.appendChild(rockText);
@@ -27,7 +31,11 @@ export function renderPlayerSelectionsDiv() {
   // create paper button element
   const paperButton = document.createElement("button");
   // set attributes
-  setAttributes(paperButton, { type: "button", name: "paper" });
+  setAttributes(paperButton, {
+    type: "button",
+    name: "paper",
+    class: "playerButton",
+  });
   // create text node and append to button
   const paperText = document.createTextNode("Paper");
   paperButton.appendChild(paperText);
@@ -35,7 +43,11 @@ export function renderPlayerSelectionsDiv() {
   // create scissors button element
   const scissorsButton = document.createElement("button");
   // set attributes
-  setAttributes(scissorsButton, { type: "button", name: "scissors" });
+  setAttributes(scissorsButton, {
+    type: "button",
+    name: "scissors",
+    class: "playerButton",
+  });
   // create text node and append to button
   const scissorsText = document.createTextNode("Scissors");
   scissorsButton.appendChild(scissorsText);

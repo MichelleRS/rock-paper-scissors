@@ -18,6 +18,7 @@
 }
 .app-box {
   background-color: lightblue;
+  background-color: var(--color1);
   border: 5px solid var(--color2);
   width: 100%;
 }
@@ -37,19 +38,57 @@
   elements
 ***********/
 
+/* remove default settings */
+p,
+h1,
+h2 {
+  margin: 0px;
+  padding: 0px;
+  border: 0;
+}
+
 /* section: game controls */
 .hidden {
-  display: none;
+  /* prevent display: flex from overriding display: none */
+  display: none !important;
 }
 #playerSelections,
 #roundResults {
   margin: 5%;
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  /* center vertically */
+  justify-content: center;
+}
+.app-container h2 {
+  margin-bottom: 1rem;
 }
 .playerButtonsContainer {
-  background-color: magenta;
+  /* background-color: lightcyan; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+.playerButton {
+  /* size */
+  width: 100px;
+  height: 100px;
+  /* color */
+  background-color: var(--color2);
+  color: var(--color1);
+  /* text */
+  font-size: 1.25rem;
+  font-weight: bolder;
+  /* style */
+  border: none;
+}
+.playerButton:hover,
+.playerButton:focus,
+.playerButton:active {
+  background-color: var(--color1);
+  color: var(--color2);
+  border: 3px solid var(--color2);
 }
 
 /* TODO section: scoreboard */
