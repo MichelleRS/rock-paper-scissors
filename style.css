@@ -1,3 +1,7 @@
+/* imports */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+
 /* variables */
 :root {
   /* light neutral */
@@ -6,18 +10,27 @@
   --color2: hsla(185, 22%, 10%, 1);
 }
 
+/* body styling */
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  color: var(--color2);
+  background-color: var(--color1);
+}
+
 /* layout 
-- bgc and borders are to help with layout. TODO remove when complete
+- bgc and borders are to help with layout. TODO remove/update when complete
 */
 .app-container {
-  background-color: pink;
+  /* background-color: pink; */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 .app-box {
-  background-color: lightblue;
+  /* background-color: lightblue; */
   background-color: var(--color1);
   border: 5px solid var(--color2);
   width: 100%;
