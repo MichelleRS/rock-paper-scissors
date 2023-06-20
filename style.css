@@ -1,3 +1,39 @@
+/* variables */
+:root {
+  /* light neutral */
+  --color1: hsla(42, 70%, 94%, 1);
+  /* dark neutral */
+  --color2: hsla(185, 22%, 10%, 1);
+}
+
+/* layout 
+- bgc and borders are to help with layout. TODO remove when complete
+*/
+.app-container {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.app-box {
+  background-color: lightblue;
+  border: 5px solid var(--color2);
+  width: 100%;
+}
+.app-box #playerSelections,
+.app-box #roundResults {
+  min-height: 200px;
+}
+@media screen and (min-width: 700px) {
+  .app-container {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* elements */
 .hidden {
   display: none;
 }
