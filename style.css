@@ -33,7 +33,23 @@
   }
 }
 
-/* elements */
+/**********
+  elements
+***********/
+
+/* section: game controls */
 .hidden {
   display: none;
 }
+#playerSelections,
+#roundResults {
+  margin: 5%;
+}
+.playerButtonsContainer {
+  background-color: magenta;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* TODO section: scoreboard */

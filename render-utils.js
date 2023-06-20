@@ -11,6 +11,11 @@ export function renderPlayerSelectionsDiv() {
   // append text node to h2 element
   h2.appendChild(h2Text);
 
+  // create div element for buttons
+  const buttonsDivEl = document.createElement("div");
+  // set class attribute
+  buttonsDivEl.setAttribute("class", "playerButtonsContainer");
+
   // create rock button element
   const rockButton = document.createElement("button");
   // set attributes
@@ -29,14 +34,17 @@ export function renderPlayerSelectionsDiv() {
 
   // create scissors button element
   const scissorsButton = document.createElement("button");
-  //  set attributes
+  // set attributes
   setAttributes(scissorsButton, { type: "button", name: "scissors" });
   // create text node and append to button
   const scissorsText = document.createTextNode("Scissors");
   scissorsButton.appendChild(scissorsText);
 
+  // append buttons to button div
+  buttonsDivEl.append(rockButton, paperButton, scissorsButton);
+
   // append all elements to div
-  divEl.append(h2, rockButton, paperButton, scissorsButton);
+  divEl.append(h2, buttonsDivEl);
 
   // return div element
   return divEl;
