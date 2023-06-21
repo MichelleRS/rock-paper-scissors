@@ -22,6 +22,9 @@ body {
 /* layout 
 - bgc and borders are to help with layout. TODO remove/update when complete
 */
+.flex-container {
+  display: flex;
+}
 .app-container {
   /* background-color: pink; */
   display: flex;
@@ -77,6 +80,7 @@ h2 {
 .app-container h2 {
   margin-bottom: 1rem;
 }
+/* player buttons */
 .playerButtonsContainer {
   /* background-color: lightcyan; */
   display: flex;
@@ -103,5 +107,30 @@ h2 {
   color: var(--color2);
   border: 3px solid var(--color2);
 }
-
+/* round results */
+.selectionResults {
+  margin-bottom: 1rem;
+}
+/* next round button */
+#nextRoundButton {
+  /* size */
+  width: 150px;
+  height: 40px;
+  /* color */
+  background-color: var(--color2);
+  color: var(--color1);
+  /* text */
+  font-size: 1.25rem;
+  font-weight: bolder;
+  /* style */
+  border: none;
+}
+#nextRoundButton:hover,
+#nextRoundButton:focus,
+#nextRoundButton:active {
+  background-color: var(--color1);
+  color: var(--color2);
+  border: 3px solid var(--color2);
+}
 /* TODO section: scoreboard */
+/* TODO reset scores button */

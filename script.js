@@ -60,7 +60,7 @@ function handlePlayerSelection() {
 
 function handleNextRound() {
   // get button
-  const nextRoundBtn = document.getElementById("nextRoundBtn");
+  const nextRoundBtn = document.getElementById("nextRoundButton");
   // listen for click
   nextRoundBtn.addEventListener("click", async () => {
     // hide round results and display player selections
