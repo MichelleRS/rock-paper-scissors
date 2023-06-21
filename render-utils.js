@@ -73,6 +73,11 @@ export function renderRoundResultsDiv() {
   // set id
   h2El.setAttribute("id", "roundWinnerEl");
 
+  // create styling div element for player and computer selection paragraphs and button
+  const detailsDiv = document.createElement("div");
+  // set class attribute
+  detailsDiv.setAttribute("class", "roundResultsDetails");
+
   // create div element for player and computer selection paragraphs
   const choicesDiv = document.createElement("div");
   // set class attribute
@@ -100,8 +105,11 @@ export function renderRoundResultsDiv() {
   // append text node to buttonEl
   buttonEl.appendChild(buttonText);
 
+  // append choicesDiv and buttonEl to detailsDiv
+  detailsDiv.append(choicesDiv, buttonEl);
+
   // append all parent elements to div element
-  divEl.append(h2El, choicesDiv, buttonEl);
+  divEl.append(h2El, detailsDiv);
 
   // return div element
   return divEl;

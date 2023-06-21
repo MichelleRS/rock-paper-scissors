@@ -40,7 +40,20 @@ body {
 }
 .app-box #playerSelections,
 .app-box #roundResults {
-  min-height: 200px;
+  /* background-color: pink; */
+  min-height: 160px;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.roundResultsDetails {
+  /* background-color: pink; */
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+  align-items: center;
+  /* height: 150px; */
 }
 @media screen and (min-width: 700px) {
   .app-container {
@@ -62,23 +75,16 @@ h2 {
   padding: 0px;
   border: 0;
 }
+.app-container h2 {
+  margin-bottom: 1rem;
+}
 
-/* section: game controls */
+/**********************
+section: game controls 
+***********************/
 .hidden {
   /* prevent display: flex from overriding display: none */
   display: none !important;
-}
-#playerSelections,
-#roundResults {
-  margin: 5%;
-  /* background-color: pink; */
-  display: flex;
-  flex-direction: column;
-  /* center vertically */
-  justify-content: center;
-}
-.app-container h2 {
-  margin-bottom: 1rem;
 }
 /* player buttons */
 .playerButtonsContainer {
@@ -106,10 +112,6 @@ h2 {
   background-color: var(--color1);
   color: var(--color2);
   border: 3px solid var(--color2);
-}
-/* round results */
-.selectionResults {
-  margin-bottom: 1rem;
 }
 /* next round button */
 #nextRoundButton {
