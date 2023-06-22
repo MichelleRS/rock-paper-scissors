@@ -1,3 +1,6 @@
+// !IMPORTANT
+// Render file no longer in use
+
 export function renderPlayerSelectionsDiv() {
   // create div element
   const divEl = document.createElement("div");
