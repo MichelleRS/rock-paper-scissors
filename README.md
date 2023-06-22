@@ -9,9 +9,10 @@ A player versus computer game of rock-paper-scissors.
   - layout design
   - toggle refactor
   - CSS: basic layout and styling
+  - refactor:
+    - hard code #gameControls
+    - style buttons
 - Future updates:
-  - hard code html instead of rendering
-  - style buttons with icons
   - scoreboard
     - start scores at 0
     - layout and styling
@@ -56,6 +57,6 @@ A player versus computer game of rock-paper-scissors.
 
 ## Resources
 
-- [Setting multiple attributes for an element at once with JavaScript.](https://stackoverflow.com/questions/12274748/setting-multiple-attributes-for-an-element-at-once-with-javascript) Stack Overflow.
+- [Setting multiple attributes for an element at once with JavaScript.](https://stackoverflow.com/questions/12274748/setting-multiple-attributes-for-an-element-at-once-with-javascript). Stack Overflow.
 
 - Toggle first tested in my repo [javascript-practice > modular-components](https://github.com/MichelleRS/javascript-practice/tree/main/modular-components)
