@@ -123,14 +123,15 @@ section: game controls
   font-size: 1.25rem;
   font-weight: bolder;
   /* style */
-  border: 3px solid var(--color2);
+  border: none;
+  outline: 3px solid var(--color2);
 }
 .playerButton:hover,
 .playerButton:focus,
 .playerButton:active {
   background-color: var(--color4);
-  color: var(--color2);
-  border: 5px solid var(--color2);
+  border: 3px solid var(--color2);
+  outline: 3px solid var(--color1);
 }
 .emojiCode {
   align-items: center;
