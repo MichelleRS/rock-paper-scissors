@@ -156,9 +156,10 @@ section: game controls
 #nextRoundButton:hover,
 #nextRoundButton:focus,
 #nextRoundButton:active {
-  background-color: var(--color1);
-  color: var(--color2);
-  border: 3px solid var(--color2);
+  background-color: var(--color2);
+  color: var(--color1);
+  border: 3px solid var(--color1);
+  outline: 2px solid var(--color2);
 }
 
 /********************
