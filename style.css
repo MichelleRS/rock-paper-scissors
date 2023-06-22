@@ -8,6 +8,8 @@
   --color1: hsla(42, 70%, 94%, 1);
   /* dark neutral */
   --color2: hsla(185, 22%, 10%, 1);
+  /* red */
+  --color3: hsla(7, 64%, 54%, 1);
 }
 
 /* body styling */
@@ -55,8 +57,12 @@ body {
   align-items: center;
   /* height: 150px; */
 }
+.scoreboardElements {
+  margin: 5%;
+}
 @media screen and (min-width: 700px) {
-  .app-container {
+  .app-container,
+  header {
     width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -75,10 +81,16 @@ h2 {
   padding: 0px;
   border: 0;
 }
+header {
+  /* background-color: pink; */
+  margin-bottom: 1rem;
+}
 .app-container h2 {
   margin-bottom: 1rem;
 }
-
+p {
+  font-size: 1.25rem;
+}
 /**********************
 section: game controls 
 ***********************/
@@ -134,5 +146,30 @@ section: game controls
   color: var(--color2);
   border: 3px solid var(--color2);
 }
-/* TODO section: scoreboard */
-/* TODO reset scores button */
+
+/********************
+scoreboard buttons
+*********************/
+.resetButtonStyling {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#resetScoresButton {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 1.15rem;
+  font-weight: bolder;
+}
+#resetScoresButton:hover,
+#resetScoresButton:active {
+  color: var(--color3);
+  text-decoration: none;
+}
+#resetScoresButton:focus {
+  color: var(--color3);
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 0 0 0 2px var(--color3);
+}

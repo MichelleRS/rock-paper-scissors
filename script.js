@@ -6,7 +6,7 @@ import {
 /* get DOM elements */
 const gameControls = document.getElementById("gameControls");
 const roundNumSpan = document.getElementById("roundNumSpan");
-const resetScoresBtn = document.getElementById("resetScores");
+const resetScoresBtn = document.getElementById("resetScoresButton");
 const playerSelectionsDiv = renderPlayerSelectionsDiv();
 const roundResultsDiv = renderRoundResultsDiv();
 
