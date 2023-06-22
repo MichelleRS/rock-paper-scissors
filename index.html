@@ -14,7 +14,38 @@
     <main>
       <div class="app-container">
         <!-- game controls: toggle between player selections and round results-->
-        <section id="gameControls" class="app-box"></section>
+        <section id="gameControls" class="app-box">
+          <!-- player selections component -->
+          <div id="playerSelections">
+            <h2>Make your selection</h2>
+            <div class="playerButtonsContainer">
+              <button type="button" name="rock" class="playerButton">
+                <span class="emojiCode">&#9994;</span>
+                <span class="emojiLabel">Rock</span>
+              </button>
+              <button type="button" name="paper" class="playerButton">
+                <span class="emojiCode">&#9995;</span>
+                <span class="emojiLabel">Paper</span>
+              </button>
+              <button type="button" name="scissors" class="playerButton">
+                <span class="emojiCode">&#9996;</span>
+                <span class="emojiLabel">Scissors</span>
+              </button>
+            </div>
+          </div>
+          <!-- round results component: hidden on page load -->
+          <div id="roundResults" class="hidden">
+            <h2 id="roundWinnerEl"></h2>
+            <div class="roundResultsDetails">
+              <div class="selectionResults">
+                <p id="playerSelectionEl"></p>
+                <p id="computerSelectionEl"></p>
+              </div>
+              <button id="nextRoundButton">Next Round</button>
+            </div>
+          </div>
+        </section>
+
         <!-- scoreboard -->
         <section id="scoreboard" class="app-box">
           <div class="scoreboardElements">

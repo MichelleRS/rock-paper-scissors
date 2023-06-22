@@ -1,14 +1,12 @@
-import {
-  renderPlayerSelectionsDiv,
-  renderRoundResultsDiv,
-} from "./render-utils.js";
-
 /* get DOM elements */
 const gameControls = document.getElementById("gameControls");
+const playerSelectionsDiv = document.getElementById("playerSelections");
+const roundResultsDiv = document.getElementById("roundResults");
+const roundWinnerEl = document.getElementById("roundWinnerEl");
+const playerSelectionEl = document.getElementById("playerSelectionEl");
+const computerSelectionEl = document.getElementById("computerSelectionEl");
 const roundNumSpan = document.getElementById("roundNumSpan");
 const resetScoresBtn = document.getElementById("resetScoresButton");
-const playerSelectionsDiv = renderPlayerSelectionsDiv();
-const roundResultsDiv = renderRoundResultsDiv();
 
 /* state */
 let playerWins = 0;
@@ -18,8 +16,10 @@ let roundNum = 0;
 
 /* events */
 window.addEventListener("load", () => {
-  // handle game controls
-  handleGameControls();
+  // handle player selection clicks
+  handlePlayerSelection();
+  // handle 'Next Round' button click
+  handleNextRound();
 });
 
 // reset game
@@ -33,11 +33,6 @@ function handleGameControls() {
   gameControls.append(playerSelectionsDiv, roundResultsDiv);
   // hide round results
   roundResultsDiv.classList.add("hidden");
-
-  // handle player selection clicks
-  handlePlayerSelection();
-  // handle 'Next Round' button click
-  handleNextRound();
 }
 
 function handlePlayerSelection() {
