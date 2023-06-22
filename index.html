@@ -12,17 +12,23 @@
       <h1>Rock Paper Scissors</h1>
     </header>
     <main>
-      <!-- game controls: toggle between player selections and round results-->
-      <section id="gameControls"></section>
-      <!-- scoreboard -->
-      <section id="scoreboard">
-        <h2>Scoreboard</h2>
-        <p>Player Wins: <span id="playerWins"></span></p>
-        <p>Computer Wins: <span id="computerWins"></span></p>
-        <p>Ties: <span id="ties"></span></p>
-        <p>Rounds: <span id="roundNumSpan"></span></p>
-        <button type="button" id="resetScores">Reset Scores</button>
-      </section>
+      <div class="app-container">
+        <!-- game controls: toggle between player selections and round results-->
+        <section id="gameControls" class="app-box"></section>
+        <!-- scoreboard -->
+        <section id="scoreboard" class="app-box">
+          <div class="scoreboardElements">
+            <h2>Scoreboard</h2>
+            <p>Player Wins: <span id="playerWins"></span></p>
+            <p>Computer Wins: <span id="computerWins"></span></p>
+            <p>Ties: <span id="ties"></span></p>
+            <p>Rounds: <span id="roundNumSpan"></span></p>
+            <div class="resetButtonStyling">
+              <button type="button" id="resetScoresButton">Reset Scores</button>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
     <footer></footer>
     <script type="module" src="script.js"></script>

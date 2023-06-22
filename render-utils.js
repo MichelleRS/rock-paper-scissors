@@ -11,10 +11,19 @@ export function renderPlayerSelectionsDiv() {
   // append text node to h2 element
   h2.appendChild(h2Text);
 
+  // create div element for buttons
+  const buttonsDivEl = document.createElement("div");
+  // set class attribute
+  buttonsDivEl.setAttribute("class", "playerButtonsContainer");
+
   // create rock button element
   const rockButton = document.createElement("button");
   // set attributes
-  setAttributes(rockButton, { type: "button", name: "rock" });
+  setAttributes(rockButton, {
+    type: "button",
+    name: "rock",
+    class: "playerButton",
+  });
   // create text node and append to button
   const rockText = document.createTextNode("Rock");
   rockButton.appendChild(rockText);
@@ -22,21 +31,32 @@ export function renderPlayerSelectionsDiv() {
   // create paper button element
   const paperButton = document.createElement("button");
   // set attributes
-  setAttributes(paperButton, { type: "button", name: "paper" });
+  setAttributes(paperButton, {
+    type: "button",
+    name: "paper",
+    class: "playerButton",
+  });
   // create text node and append to button
   const paperText = document.createTextNode("Paper");
   paperButton.appendChild(paperText);
 
   // create scissors button element
   const scissorsButton = document.createElement("button");
-  //  set attributes
-  setAttributes(scissorsButton, { type: "button", name: "scissors" });
+  // set attributes
+  setAttributes(scissorsButton, {
+    type: "button",
+    name: "scissors",
+    class: "playerButton",
+  });
   // create text node and append to button
   const scissorsText = document.createTextNode("Scissors");
   scissorsButton.appendChild(scissorsText);
 
-  // append all elements to div
-  divEl.append(h2, rockButton, paperButton, scissorsButton);
+  // append buttons to button div
+  buttonsDivEl.append(rockButton, paperButton, scissorsButton);
+
+  // append all parent elements to div
+  divEl.append(h2, buttonsDivEl);
 
   // return div element
   return divEl;
@@ -53,6 +73,16 @@ export function renderRoundResultsDiv() {
   // set id
   h2El.setAttribute("id", "roundWinnerEl");
 
+  // create styling div element for player and computer selection paragraphs and button
+  const detailsDiv = document.createElement("div");
+  // set class attribute
+  detailsDiv.setAttribute("class", "roundResultsDetails");
+
+  // create div element for player and computer selection paragraphs
+  const choicesDiv = document.createElement("div");
+  // set class attribute
+  choicesDiv.setAttribute("class", "selectionResults");
+
   // create player selection paragraph element
   const playerSelectionEl = document.createElement("p");
   // set id
@@ -63,17 +93,23 @@ export function renderRoundResultsDiv() {
   // set id
   computerSelectionEl.setAttribute("id", "computerSelectionEl");
 
+  // append player and computer selection paragraph elements to choicesDiv
+  choicesDiv.append(playerSelectionEl, computerSelectionEl);
+
   // create 'Next Round' button element
   const buttonEl = document.createElement("button");
   // set id attribute
-  buttonEl.setAttribute("id", "nextRoundBtn");
+  buttonEl.setAttribute("id", "nextRoundButton");
   // create text node for button
   const buttonText = document.createTextNode("Next Round");
   // append text node to buttonEl
   buttonEl.appendChild(buttonText);
 
-  // append all elements to div element
-  divEl.append(h2El, playerSelectionEl, computerSelectionEl, buttonEl);
+  // append choicesDiv and buttonEl to detailsDiv
+  detailsDiv.append(choicesDiv, buttonEl);
+
+  // append all parent elements to div element
+  divEl.append(h2El, detailsDiv);
 
   // return div element
   return divEl;

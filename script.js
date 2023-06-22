@@ -6,7 +6,7 @@ import {
 /* get DOM elements */
 const gameControls = document.getElementById("gameControls");
 const roundNumSpan = document.getElementById("roundNumSpan");
-const resetScoresBtn = document.getElementById("resetScores");
+const resetScoresBtn = document.getElementById("resetScoresButton");
 const playerSelectionsDiv = renderPlayerSelectionsDiv();
 const roundResultsDiv = renderRoundResultsDiv();
 
@@ -60,7 +60,7 @@ function handlePlayerSelection() {
 
 function handleNextRound() {
   // get button
-  const nextRoundBtn = document.getElementById("nextRoundBtn");
+  const nextRoundBtn = document.getElementById("nextRoundButton");
   // listen for click
   nextRoundBtn.addEventListener("click", async () => {
     // hide round results and display player selections

@@ -1,3 +1,175 @@
+/* imports */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+
+/* variables */
+:root {
+  /* light neutral */
+  --color1: hsla(42, 70%, 94%, 1);
+  /* dark neutral */
+  --color2: hsla(185, 22%, 10%, 1);
+  /* red */
+  --color3: hsla(7, 64%, 54%, 1);
+}
+
+/* body styling */
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  color: var(--color2);
+  background-color: var(--color1);
+}
+
+/* layout 
+- bgc and borders are to help with layout. TODO remove/update when complete
+*/
+.flex-container {
+  display: flex;
+}
+.app-container {
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.app-box {
+  /* background-color: lightblue; */
+  background-color: var(--color1);
+  border: 5px solid var(--color2);
+  width: 100%;
+}
+.app-box #playerSelections,
+.app-box #roundResults {
+  /* background-color: pink; */
+  min-height: 160px;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.roundResultsDetails {
+  /* background-color: pink; */
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+  align-items: center;
+  /* height: 150px; */
+}
+.scoreboardElements {
+  margin: 5%;
+}
+@media screen and (min-width: 700px) {
+  .app-container,
+  header {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/**********
+  elements
+***********/
+
+/* remove default settings */
+p,
+h1,
+h2 {
+  margin: 0px;
+  padding: 0px;
+  border: 0;
+}
+header {
+  /* background-color: pink; */
+  margin-bottom: 1rem;
+}
+.app-container h2 {
+  margin-bottom: 1rem;
+}
+p {
+  font-size: 1.25rem;
+}
+/**********************
+section: game controls 
+***********************/
 .hidden {
-  display: none;
+  /* prevent display: flex from overriding display: none */
+  display: none !important;
+}
+/* player buttons */
+.playerButtonsContainer {
+  /* background-color: lightcyan; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.playerButton {
+  /* size */
+  width: 100px;
+  height: 100px;
+  /* color */
+  background-color: var(--color2);
+  color: var(--color1);
+  /* text */
+  font-size: 1.25rem;
+  font-weight: bolder;
+  /* style */
+  border: none;
+}
+.playerButton:hover,
+.playerButton:focus,
+.playerButton:active {
+  background-color: var(--color1);
+  color: var(--color2);
+  border: 3px solid var(--color2);
+}
+/* next round button */
+#nextRoundButton {
+  /* size */
+  width: 150px;
+  height: 40px;
+  /* color */
+  background-color: var(--color2);
+  color: var(--color1);
+  /* text */
+  font-size: 1.25rem;
+  font-weight: bolder;
+  /* style */
+  border: none;
+}
+#nextRoundButton:hover,
+#nextRoundButton:focus,
+#nextRoundButton:active {
+  background-color: var(--color1);
+  color: var(--color2);
+  border: 3px solid var(--color2);
+}
+
+/********************
+scoreboard buttons
+*********************/
+.resetButtonStyling {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#resetScoresButton {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  font-size: 1.15rem;
+  font-weight: bolder;
+}
+#resetScoresButton:hover,
+#resetScoresButton:active {
+  color: var(--color3);
+  text-decoration: none;
+}
+#resetScoresButton:focus {
+  color: var(--color3);
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 0 0 0 2px var(--color3);
 }

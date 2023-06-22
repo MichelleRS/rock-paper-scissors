@@ -6,10 +6,15 @@ A player versus computer game of rock-paper-scissors.
 
 - Complete:
   - JavaScript MVP
-  - Layout design
-  - Toggle refactor
-- Up next:
-  - CSS
+  - layout design
+  - toggle refactor
+  - CSS: basic layout and styling
+- Future updates:
+  - hard code html instead of rendering
+  - style buttons with icons
+  - scoreboard
+    - start scores at 0
+    - layout and styling
 
 ## Project Planning
 
